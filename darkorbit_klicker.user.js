@@ -6,6 +6,8 @@
 // @include     http://de7.darkorbit.bigpoint.com/flashinput/*
 // @grant       none
 // @require http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js
+// @updateURL https://openuserjs.org/meta/plyer51/DarkOrbit_Klick_Reloader.meta.js
+// @autor      Andreas Ritter
 // ==/UserScript==
 function getParameter(key) {
   var query = window.location.search.substring(1); 
@@ -330,9 +332,21 @@ if(getParameter("action") == "init" || getParameter("action") == "multiEnergy") 
       klick_interval = setInterval(function() {
         little_window1.src = little_window1.src;
         $("#little_window2").remove();
-        $("body").append("<iframe frameborder = '0' marginwidth = '0px;' id = 'little_window2' scrolling = 'no' src = 'http://de7.darkorbit.bigpoint.com/flashinput/galaxyGates.php?userID="+user_id+"&action=multiEnergy&sid="+session_id+"&"+gate+"=1&sample=1&multiplier="+multiplier+"'>Dein Browser unterstützt keine iFrames.</iframe>");
+        $("#little_window5").remove();
+        $("#little_window6").remove();
+        $("#little_window7").remove();
+        $("body").append("<iframe width = '1' height = '1' frameborder = '0' marginwidth = '0px;' id = 'little_window2' scrolling = 'no' src = 'http://de7.darkorbit.bigpoint.com/flashinput/galaxyGates.php?userID="+user_id+"&action=multiEnergy&sid="+session_id+"&"+gate+"=1&sample=1&multiplier="+multiplier+"'>Dein Browser unterstützt keine iFrames.</iframe>");
+        $("body").append("<iframe width = '1' height = '1' frameborder = '0' marginwidth = '0px;' id = 'little_window5' scrolling = 'no' src = 'http://de7.darkorbit.bigpoint.com/flashinput/galaxyGates.php?userID="+user_id+"&action=multiEnergy&sid="+session_id+"&"+gate+"=1&sample=1&multiplier="+multiplier+"'>Dein Browser unterstützt keine iFrames.</iframe>");
+        $("body").append("<iframe width = '1' height = '1' frameborder = '0' marginwidth = '0px;' id = 'little_window6' scrolling = 'no' src = 'http://de7.darkorbit.bigpoint.com/flashinput/galaxyGates.php?userID="+user_id+"&action=multiEnergy&sid="+session_id+"&"+gate+"=1&sample=1&multiplier="+multiplier+"'>Dein Browser unterstützt keine iFrames.</iframe>");
+        $("body").append("<iframe width = '1' height = '1' frameborder = '0' marginwidth = '0px;' id = 'little_window7' scrolling = 'no' src = 'http://de7.darkorbit.bigpoint.com/flashinput/galaxyGates.php?userID="+user_id+"&action=multiEnergy&sid="+session_id+"&"+gate+"=1&sample=1&multiplier="+multiplier+"'>Dein Browser unterstützt keine iFrames.</iframe>");
         little_window2 = document.getElementById("little_window2");
         little_window2.src = little_window2.src;
+        little_window5 = document.getElementById("little_window5");
+        little_window5.src = little_window5.src;
+        little_window6 = document.getElementById("little_window6");
+        little_window6.src = little_window6.src;
+        little_window7 = document.getElementById("little_window7");
+        little_window7.src = little_window7.src;
         if(gate == "alpha" || gate == "beta" || gate == "gamma") {
           if(alpha_tiles >= 34) {
             $("#little_window3").remove();
